@@ -1,0 +1,7 @@
+apiVersion: diagtool4j.microsoft.com/v1alpha1
+kind: Component
+metadata:
+  name: sample-sba
+  namespace: asa-apps
+spec:
+  type: SpringBootAdmin

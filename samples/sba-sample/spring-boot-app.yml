@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+  name: spring-boot-app
+  namespace: asa-apps
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: spring-boot-app
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+      labels:
+        app: spring-boot-app
+    spec:
+      containers:
+      - image: docker.io/yitaopan/demo-client-app:0.0.6
+        imagePullPolicy: Always
+        name: spring-boot-app
+        resources:
+          limits:
+            cpu: 500m
+            memory: 1Gi
+          requests:
+            cpu: 220m
+            memory: 1Gi
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: spring-boot-app
+  namespace: asa-apps
+  labels:
+    app: spring-boot-app
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: spring-boot-app
+  type: ClusterIP
