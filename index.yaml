@@ -9,12 +9,12 @@ entries:
           email: xuycao@microsoft.com
     apiVersion: v2
     appVersion: 1.1.5
-    created: "2024-12-12T15:23:34.7089773+08:00"
+    created: "2024-12-12T15:25:44.878907+08:00"
     description: diagtool4j Helm chart for Kubernetes
     digest: bc92f0519ebbdf4265db38687edae6f4a0a133c66c54bcd98a07496ee1183b52
     name: diag4j
     type: application
     urls:
-    - https://microsoft.github.com/diag4j/diag4j-1.1.5.tgz
+    - https://microsoft.github.io/diag4j/diag4j-1.1.5.tgz
     version: 1.1.5
-generated: "2024-12-12T15:23:34.7074212+08:00"
+generated: "2024-12-12T15:25:44.8769059+08:00"
