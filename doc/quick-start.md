@@ -19,14 +19,14 @@ Before starting, ensure the following prerequisites are met:
 
 1. Add the diag4j Helm repository:
     ```bash
-    helm repo add diag4j https://azure.github.io/diag4j
+    helm repo add diag4j-repo https://microsoft.github.io/diag4j
     helm repo update
     ```
 
 1. Install diag4j in the desired namespace:
 
     ```bash
-    helm install diag4j diag4j/diag4j-chart -n <namespace> --create-namespace
+    helm install diag4j diag4j-repo/diag4j --version 1.1.5 -n <namespace> --create-namespace
     ```
 
 ### Step 2: Create a Spring Boot Admin component
