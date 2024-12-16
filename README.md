@@ -26,6 +26,7 @@ To maintain security during the current milestone, both components are not expos
 Explore how to use diag4j on AKS through this demo:
 [Watch the video](https://youtu.be/srysxWp2tak)
 
-## Next Step
-[Quick start guide on spring boot admin server](./doc/quick-start-spring-boot-admin.md)
-[Quick start guide on agent service](./doc/quick-start-diagnostic-agent.md)
+## Next Steps
+
+- Explore spring boot admin component of diag4j tool [Quick Start Guide](./doc/quick-start-spring-boot-admin.md)
+- Explore diagnostic agent of diag4j tool [Quick Start Guide](./doc/quick-start-diagnostic-agent.md)

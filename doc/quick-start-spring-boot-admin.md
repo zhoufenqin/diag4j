@@ -8,10 +8,10 @@ This guide provides step-by-step instructions to set up and start using the Java
 Before starting, ensure the following prerequisites are met:
 
 1. Kubernetes Cluster: A running AKS cluster with necessary permissions.
-1. kubectl: Installed and configured to access the AKS cluster.
-1. Helm: Installed on your local machine.
-1. Java Applications: Applications deployed in AKS (better with Spring Boot actuator endpoints enabled.)
-1. Permissions: Developer access to the namespace hosting diag4j. Ensure you can execute `kubectl port-forward`.
+2. kubectl: Installed and configured to access the AKS cluster.
+3. Helm: Installed on your local machine.
+4. Java Applications: Applications deployed in AKS (better with Spring Boot actuator endpoints enabled.)
+5. Permissions: Developer access to the namespace hosting diag4j. Ensure you can execute `kubectl port-forward`.
 
 ## Steps
 
@@ -23,7 +23,7 @@ Before starting, ensure the following prerequisites are met:
     helm repo update
     ```
 
-1. Install diag4j in the desired namespace:
+2. Install diag4j in the desired namespace:
 
     ```bash
     helm install diag4j diag4j-repo/diag4j --version 1.1.5 -n <namespace> --create-namespace
@@ -60,11 +60,30 @@ Before starting, ensure the following prerequisites are met:
     kubectl port-forward svc/spring-boot-admin-azure-java -n <namespace> 8080:8080
     ```
 
-1. Navigate to http://localhost:8080 in your browser to view the SBA dashboard, all applications in the same namespace should be registered automatically.
+2. Navigate to http://localhost:8080 in your browser to view the SBA dashboard, all applications in the same namespace should be registered automatically.
 
 ![sba-dashboard](images/sba-dashboard.png)
 
-1. Click on an application to view its details, metrics, and logs.
+### Step 4: Use Diagnostic Features
+
+1. View Application Metrics:
+
+- Click on the application in the SBA dashboard to access real-time metrics like:
+  - CPU & memory usage.
+  - Garbage collection (GC) status.
+  - Active threads and environment variables.
 
 ![sba-app-details](images/app-details.png)
+
+2. Adjust Log Levels:
+
+- Navigate to the Loggers section.
+- Modify log levels dynamically for specific packages or classes to isolate issues.
+
+![sba-change-log-level](images/log-level-change.png)
+
+3. Perform Advanced Diagnostics:
+
+- Generate heap dumps and thread dumps for in-depth analysis.
+
 
