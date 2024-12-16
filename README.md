@@ -17,7 +17,7 @@ The diag4j tool is composed of two main components: the Spring Boot Admin server
 - The Java Attach Agent is a lightweight Java agent that attaches to running Java processes, enabling diagnostic capabilities without restarting the application.
 
 ### Access
-To maintain security during the current milestone, both components are not exposed publicly. Developers can access the tool via the `kubectl port-forward` command. For detailed instructions, refer to the [Quick Start](/doc/quick-start.md) guide.
+To maintain security during the current milestone, both components are not exposed publicly. Developers can access the tool via the `kubectl port-forward` command.
 
 ![Architecture Diagram](/doc/images/arch.png)
 > Note: SBA stands for Spring Boot Admin server.
@@ -25,3 +25,7 @@ To maintain security during the current milestone, both components are not expos
 ## Demonstration Video
 Explore how to use diag4j on AKS through this demo:
 [Watch the video](https://youtu.be/srysxWp2tak)
+
+## Next Step
+[Quick start guide on spring boot admin server](./doc/quick-start-spring-boot-admin.md)
+[Quick start guide on agent service](./doc/quick-start-diagnostic-agent.md)
