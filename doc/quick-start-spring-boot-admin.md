@@ -86,4 +86,6 @@ Before starting, ensure the following prerequisites are met:
 
 - Generate heap dumps and thread dumps for in-depth analysis.
 
+## Next Steps
 
+- Explore diagnostic agent of diag4j tool [Quick Start Guide](./quick-start-diagnostic-agent.md)
