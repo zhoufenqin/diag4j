@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   labels:
   name: sba-test-app
-  namespace: <your-namespace>
+  namespace: <namespace>
 spec:
   progressDeadlineSeconds: 600
   replicas: 1
@@ -23,7 +23,7 @@ spec:
         app: sba-test-app
     spec:
       containers:
-      - image: <your-container-image>
+      - image: <container-image>
         imagePullPolicy: Always
         name: sba-test-app
         resources:
@@ -40,7 +40,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: sba-test-app
-  namespace: <your-namespace>
+  namespace: <namespace>
   labels:
     app: sba-test-app
 spec:

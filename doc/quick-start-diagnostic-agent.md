@@ -1,4 +1,4 @@
-# Java Diagnostic Agent
+# Quick Start Guide: Java Diagnostic Agent
 Java Diagnostic Agent is a java agent for throubleshooting Java process. It doesn't need to rebuild and redeploy the application. Currently, it support add logs around a function in Java class, once the function is called, the log will be printed and calculate the total cost.
 
 ## Prerequisites
@@ -21,6 +21,7 @@ Java Diagnostic Agent is a java agent for throubleshooting Java process. It does
 ## How to use Intellij Idea plugin
 ### [Prerequisites](#prerequisites)
   - install the Intellij Idea [plugin](https://plugins.jetbrains.com/plugin/26078-java-diagnostic-tool-on-aks) (TODO: update the plugin like here)
+  - java applications to troubleshoot with. If you need help to deploy your Java application to AKS, please refer to this guide to deploy a sample Java app to your AKS: [Deploy an app on AKS](deploy-app.md)
 
 ### Agent Overview Dashboard
   - you can configure your port which forward to the agent service in local 
