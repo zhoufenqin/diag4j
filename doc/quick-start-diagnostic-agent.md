@@ -20,7 +20,7 @@ It's useful when locate the performance bottleneck of the Java application.
 
 ## How to use Intellij Idea plugin
 ### [Prerequisites](#prerequisites)
-  - install the Intellij Idea [plugin](https://plugins.jetbrains.com/plugin/26078-java-diagnostic-tool-on-aks) (TODO: update the plugin like here)
+  - install the Intellij Idea [plugin](https://github.com/microsoft/diag4j/releases)
   - java applications to troubleshoot with. If you need help to deploy your Java application to AKS, please refer to this guide to deploy a sample Java app to your AKS: [Deploy an app on AKS](deploy-app.md)
 
 ### Agent Overview Dashboard
