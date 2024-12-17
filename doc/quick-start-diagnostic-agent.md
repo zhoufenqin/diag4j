@@ -1,5 +1,5 @@
 # Quick Start Guide: Java Diagnostic Agent
-Java Diagnostic Agent is a java agent for throubleshooting Java process. It doesn't need to rebuild and redeploy the application. Currently, it support add logs around a function in Java class, once the function is called, the log will be printed and calculate the total cost.
+Java Diagnostic Agent is a java agent for throubleshooting Java process. It doesn't need to rebuild, redeploy or restart the application. Currently, it support add logs around a function in Java class, once the function is called, the log will be printed and calculate the total time consumed.
 
 ## Prerequisites
 - [install diag4j in Your Cluster](quick-start.md#steps)
@@ -12,11 +12,11 @@ Java Diagnostic Agent is a java agent for throubleshooting Java process. It does
 - Work with [Java Diagnostic Tool on AKS plugin](#java-diagnostic-tool-on-aks-plugin).
 
 # Java Diagnostic Tool on AKS plugin
-> This plugin is used to attach Java diagnostic agent to the Java application which running in a pod container on Azure Kubernetes Service (AKS) cluster.
-> 
-> After Attach, it allows to do some troubleshooting like add logs around a class function, to test if the function is executed and calculate the total cost of the function
->
-> It's useful when locate the performance bottleneck of the Java application.
+This plugin is used to attach Java diagnostic agent to the Java application which running in a pod container on Azure Kubernetes Service (AKS) cluster.
+ 
+After Attach, it allows to do some troubleshooting like add logs around a class function, to test if the function is executed and calculate the total cost of the function
+
+It's useful when locate the performance bottleneck of the Java application.
 
 ## How to use Intellij Idea plugin
 ### [Prerequisites](#prerequisites)
