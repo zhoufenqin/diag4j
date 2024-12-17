@@ -6,7 +6,7 @@ Java Diagnostic Agent is a java agent for throubleshooting Java process. It does
 - Support Java TLS version: 11,17,21
 
 ## Steps
-- Port Forwarding the the agent service
+- Port Forwarding to the agent service
   > kubectl port-forward svc/diag4j-agent-service -n <namespace> {port}:8080
 
 - Work with [Java Diagnostic Tool on AKS plugin](#java-diagnostic-tool-on-aks-plugin).
@@ -18,9 +18,9 @@ Java Diagnostic Agent is a java agent for throubleshooting Java process. It does
 >
 > It's useful when locate the performance bottleneck of the Java application.
 
-## How to use
+## How to use Intellij Idea plugin
 ### [Prerequisites](#prerequisites)
-  - install the Intellij Idea [plugin](https://plugins.jetbrains.com/plugin/26078-java-diagnostic-tool-on-aks) (TODO: update the plguin like here)
+  - install the Intellij Idea [plugin](https://plugins.jetbrains.com/plugin/26078-java-diagnostic-tool-on-aks) (TODO: update the plugin like here)
 
 ### Agent Overview Dashboard
   - you can configure your port which forward to the agent service in local 
@@ -30,6 +30,12 @@ Java Diagnostic Agent is a java agent for throubleshooting Java process. It does
   ![Agent Overview](images/plugin/overview.png)
 
 ### Attach Agent
+> The pod container should have /tmp folder, and it should have write permission to /tmp folder
+> 
+> Should enable attach in the JVM, like don't add "-XX:+DisableAttachMechanism" in the JVM options
+> 
+> The backend diagnostic server will be closed after 6 hours 
+
   - click the pod you want to attach the agent and select the container, only one container in the pod can be attached
   - wait the attachment process to complete
   
@@ -41,6 +47,8 @@ Java Diagnostic Agent is a java agent for throubleshooting Java process. It does
  ![Set active pod container](images/plugin/setactive.png)
 
 ### Add log around a class function
+> The configured log will be removed after the 30 minutes automatically
+
 - select the class and function you want to add log, then click the "Add AroundLog" button. In below example, after add log, then call "{host}/infor", you can see the log print before and after the function called
 
 ![Add Log](images/plugin/addlog.png)
@@ -50,3 +58,6 @@ Java Diagnostic Agent is a java agent for throubleshooting Java process. It does
 ### Remove all configured logs
 - click the "Remove All AroundLogs" button, all the logs added by the agent will be removed
 
+
+## Note
+- The backend Java agent is used by ephemeral container in the pod, Once the pod restart, the agent will be removed
